@@ -8,9 +8,8 @@ A basic ETL pipeline built for UKHSA Data Engineer application, July 2024.
 
 ### Set up
 
-1. Create a virtual environment.
-2. Activate the virtual environment.
-3. Install dependencies listed in the `pyproject.toml` file by entering `pip install .` into the terminal.
+1. Create and activate a virtual environment.
+2. Run `pip install .` in the terminal to install dependencies.
 
 ## Run
 
@@ -24,9 +23,9 @@ A basic ETL pipeline built for UKHSA Data Engineer application, July 2024.
 
 ### Set up
 
-1. Create a virtual environment.
-2. Activate the virtual environment.
-3. Install dependencies, including developer dependencies, listed in the `pyproject.toml` file by entering `pip install .[dev]` into the terminal.
+1. Create and activate a virtual environment.
+2. Run `pip install .[dev]` in the terminal to install dependencies, including developer dependencies.
+3. Run `pre-commit install` in the terminal to install project pre-commits
 
 ----------
 
