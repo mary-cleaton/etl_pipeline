@@ -1,0 +1,39 @@
+[project]
+name = "etl-pipeline"
+authors = [
+    {name = "mary cleaton"}
+]
+description = "A basic ETL pipeline built for UKHSA Data Engineer application, July 2024."
+readme = "README.md"
+requires-python = ">=3.10.12"
+version = "0.0.1"
+dependencies = [
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-cov",
+    "pytest-check==2.3.1"
+]
+lint = [
+    "black<24",
+    "ruff"
+]
+dev = [
+    "etl-pipeline[test, lint]",
+]
+
+[tool.black]
+line-length = 79
+indent-width = 4
+
+[tool.ruff]
+line-length = 79
+lint.extend-select = [
+    "E", # pycodestyle: errors
+    "F401", #pyflakes: unused-import
+    "I", # isort
+    "W", # pycodestyle: warnings
+]
+indent-width = 4
