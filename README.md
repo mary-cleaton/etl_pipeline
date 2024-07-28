@@ -24,6 +24,7 @@ A basic ETL pipeline built for UKHSA Data Engineer application, July 2024.
 
 ## Pipeline flowchart
 
+![alt text](pipeline_flowchart.png "pipeline flowchart")
 ----------
 
 ## Developer instructions
