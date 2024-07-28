@@ -14,7 +14,6 @@ COLUMN_RENAME_DICT:
     forename: "first_name"
     surname: "last_name"
 SOC_LOOKUP_COLUMNS:
-    lookup_soc_4digits: "SOC 2020"
-    lookup_soc_description: "INDEXOCC"
-    data_soc_col: "SOC"
+    df_col: "SOC"
+    lookup_col: "SOC 2020"
 
