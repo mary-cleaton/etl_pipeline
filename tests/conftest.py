@@ -2,7 +2,7 @@ import pandas as pd
 import pytest
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="function")
 def get_input_dataset():
     return pd.DataFrame(
         {
@@ -12,7 +12,12 @@ def get_input_dataset():
     )
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="function")
+def get_null():
+    return None
+
+
+@pytest.fixture(scope="function")
 def get_output_dataset_1():
     return pd.DataFrame(
         {
@@ -22,6 +27,11 @@ def get_output_dataset_1():
     )
 
 
-@pytest.fixture(scope="session")
-def get_null():
-    return None
+@pytest.fixture(scope="function")
+def get_output_dataset_2():
+    return pd.DataFrame(
+        {
+            "forename": ["Peter", "Aisha", "Colin", "Lucy Anne"],
+            "surname": ["Gardiner", "Al Fayed", "Quentin Jr ", "Griffiths"],
+        }
+    )

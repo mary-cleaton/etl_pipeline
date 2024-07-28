@@ -5,22 +5,24 @@ authors = [
 ]
 description = "A basic ETL pipeline built for UKHSA Data Engineer application, July 2024."
 readme = "README.md"
-requires-python = ">=3.10.12"
+requires-python = ">=3.8"
 version = "0.0.1"
 dependencies = [
+    "pandas==2.2.2",
 ]
 
 [project.optional-dependencies]
 test = [
     "pytest",
     "pytest-cov",
-    "pytest-check==2.3.1"
+    "pytest-check==2.3.1",
 ]
 lint = [
     "black<24",
-    "ruff"
+    "ruff",
 ]
 dev = [
+    "pre-commit",
     "etl-pipeline[test, lint]",
 ]
 

@@ -1,15 +1,14 @@
 ---
-TABLE_NAME: "test_dataset"
+INPUT_FILE_NAME: "mock_data.csv"
+OUTPUT_FILE_NAME: "mock_data_transformed.csv"
 
-INPUT_FILE_NAME: "sd2011.csv"
-OUTPUT_FILE_NAME: "sd2011_transformed.csv"
-
-INPUT_FILEPATH: "inputs/"
-OUTPUT_FILEPATH: "outputs/"
+INPUT_FILEPATH: "input/"
+OUTPUT_FILEPATH: "output/"
 
 STRING_COLUMNS:
-    - "forename"
-    - "surname"
+    - "Forename"
+    - "MiddleName"
+    - "Surname"
 COLUMN_RENAME_DICT:
     forename: "first_name"
     surname: "last_name"
