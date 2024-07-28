@@ -1,5 +1,32 @@
+from hashlib import sha3_256, sha256
+from typing import List
+
 import pandas as pd
 import yaml
+
+
+def hash_cols(df: pd.DataFrame, cols: List[str], hash_type: str = "sha-256"):
+    """
+    Takes a Pandas dataframe and hashes specified columns of it, using either
+        the sha-256 or sha-3 hashing algorithm.
+
+    Args:
+        df (pd.DataFrame): The Pandas dataframe whose columns will be hashed.
+        cols (List[str]): The names of the columns in df to be hashed.
+        hash_type (str): The type of hash to use. Must be "sha-256" or
+            "sha-3_256". Default is "sha-256".
+
+    Returns:
+        df_hashed (pd.DataFrame): The Pandas dataframe df with specified
+            columns hashed using the specified algorithm.
+    """
+    df_hashed = df
+    for i in cols:
+        if hash_type == "sha_256":
+            df_hashed[i] = [sha256(str(value).encode()) for value in i]
+        if hash_type == "sha-3_256":
+            df_hashed[i] = [sha3_256(str(value).encode()) for value in i]
+    return df_hashed
 
 
 def join_lookup(
