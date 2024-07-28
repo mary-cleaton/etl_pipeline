@@ -8,14 +8,22 @@ from src import utils
 def pipeline(
     INPUT_FILE_NAME: str,
     OUTPUT_FILE_NAME: str,
+    SOC_LOOKUP_FILE_NAME: str,
     INPUT_FILEPATH: str,
     OUTPUT_FILEPATH: str,
-    STRING_COLUMNS: List,
-    COLUMN_RENAME_DICT: Dict,
+    STRING_COLUMNS: List[str],
+    COLUMN_RENAME_DICT: Dict[str, str],
+    SOC_LOOKUP_COLUMNS: Dict[str, str],
 ):
     """ """
     df = pd.read_csv(
         INPUT_FILEPATH + INPUT_FILE_NAME,
+        index_col=0,
+        header=0,
+    )
+
+    soc_lookup = pd.read_csv(
+        INPUT_FILEPATH + SOC_LOOKUP_FILE_NAME,
         index_col=0,
         header=0,
     )
@@ -29,6 +37,13 @@ def pipeline(
             df=df,
             col=i,
         )
+
+    df = utils.join_lookup(
+        df,
+        soc_lookup,
+        SOC_LOOKUP_COLUMNS["df_col"],
+        SOC_LOOKUP_COLUMNS["lookup_col"],
+    )
 
     df.to_csv(OUTPUT_FILEPATH + OUTPUT_FILE_NAME)
     return df
