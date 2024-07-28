@@ -1,7 +1,7 @@
 ---
 INPUT_FILE_NAME: "mock_data.csv"
 OUTPUT_FILE_NAME: "mock_data_transformed.csv"
-SOC_LOOKUP_FILE_NAME: "SOC2020_coding_index_22-02-24.csv"
+SOC_LOOKUP_FILE_NAME: "soc_2020_sample.csv"
 
 INPUT_FILEPATH: "input/"
 OUTPUT_FILEPATH: "output/"

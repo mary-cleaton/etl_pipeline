@@ -13,8 +13,7 @@ A basic ETL pipeline built for UKHSA Data Engineer application, July 2024.
 
 ## Run
 
-1. Check the config file at `etl_pipeline/input/config.yaml` and update as
-   necessary.
+1. Check the config file at `etl_pipeline/input/config.yaml` and update as necessary.
    As default, it is set up to run on the `mock_data.csv` in
    `etl_pipeline/input/`.
 2. Run `python run.py` in the terminal.
@@ -38,3 +37,6 @@ A basic ETL pipeline built for UKHSA Data Engineer application, July 2024.
 ----------
 
 ## Input data
+
+- `mock_data`: manually created
+- `soc_2020_sample`: derived from the Standard Occupational Classification 2020 coding index in the `SOC2020_coding_index_22-02-24.csv` file downloaded from the Office for National Statistics [here](https://www.ons.gov.uk/methodology/classificationsandstandards/standardoccupationalclassificationsoc/soc2020/soc2020volume2codingrulesandconventions).
