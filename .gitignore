@@ -54,6 +54,9 @@ cover/
 # Logging / quality reports
 log/
 
+# Data
+output/
+
 # Translations
 *.mo
 *.pot
