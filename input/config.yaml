@@ -1,6 +1,7 @@
 ---
 INPUT_FILE_NAME: "mock_data.csv"
 OUTPUT_FILE_NAME: "mock_data_transformed.csv"
+SOC_LOOKUP_FILE_NAME: "SOC2020_coding_index_22-02-24.csv"
 
 INPUT_FILEPATH: "input/"
 OUTPUT_FILEPATH: "output/"
@@ -12,4 +13,8 @@ STRING_COLUMNS:
 COLUMN_RENAME_DICT:
     forename: "first_name"
     surname: "last_name"
+SOC_LOOKUP_COLUMNS:
+    lookup_soc_4digits: "SOC 2020"
+    lookup_soc_description: "INDEXOCC"
+    data_soc_col: "SOC"
 
