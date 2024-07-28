@@ -13,6 +13,13 @@ A basic ETL pipeline built for UKHSA Data Engineer application, July 2024.
 
 ## Run
 
+1. Check the config file at `etl_pipeline/input/config.yaml` and update as
+   necessary.
+   As default, it is set up to run on the `mock_data.csv` in
+   `etl_pipeline/input/`.
+2. Run `python run.py` in the terminal.
+
+
 ----------
 
 ## Pipeline flowchart

@@ -1,0 +1,16 @@
+---
+TABLE_NAME: "test_dataset"
+
+INPUT_FILE_NAME: "sd2011.csv"
+OUTPUT_FILE_NAME: "sd2011_transformed.csv"
+
+INPUT_FILEPATH: "inputs/"
+OUTPUT_FILEPATH: "outputs/"
+
+STRING_COLUMNS:
+    - "forename"
+    - "surname"
+COLUMN_RENAME_DICT:
+    forename: "first_name"
+    surname: "last_name"
+
