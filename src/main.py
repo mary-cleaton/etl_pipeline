@@ -24,7 +24,6 @@ def pipeline(
 
     soc_lookup = pd.read_csv(
         INPUT_FILEPATH + SOC_LOOKUP_FILE_NAME,
-        index_col=0,
         header=0,
     )
 

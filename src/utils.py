@@ -25,9 +25,9 @@ def join_lookup(
         ValueError: if lookup_col is not a column of lookup.
     """
     if df_col not in df.columns:
-        raise ValueError(f"{df_col} must be a column of {df}")
+        raise ValueError(f"{df_col} must be a column of df")
     if lookup_col not in lookup.columns:
-        raise ValueError(f"{lookup_col} must be a column of {lookup}")
+        raise ValueError(f"{lookup_col} must be a column of lookup")
     df_joined = pd.merge(
         df, lookup, left_on=[df_col], right_on=[lookup_col], how="left"
     )
