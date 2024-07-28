@@ -10,8 +10,8 @@ def pipeline(
     OUTPUT_FILE_NAME: str,
     INPUT_FILEPATH: str,
     OUTPUT_FILEPATH: str,
-    STRING_COLUMNS: List,
-    COLUMN_RENAME_DICT: Dict,
+    STRING_COLUMNS: List[str],
+    COLUMN_RENAME_DICT: Dict[str, str],
 ):
     """ """
     df = pd.read_csv(
