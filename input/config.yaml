@@ -15,5 +15,5 @@ COLUMN_RENAME_DICT:
     surname: "last_name"
 SOC_LOOKUP_COLUMNS:
     df_col: "SOC"
-    lookup_col: "SOC 2020"
+    lookup_col: "SOC_2020"
 
