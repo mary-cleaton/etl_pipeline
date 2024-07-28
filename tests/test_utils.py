@@ -1,8 +1,38 @@
+import os
 from contextlib import nullcontext as does_not_raise
 
 import pytest
+import yaml
 
 from src import utils
+
+
+@pytest.mark.parametrize(
+    "filepath, contents, expected_output, expected_context",
+    [
+        (
+            "test_file.yaml",
+            """value: 'a'""",
+            {"value": "a"},
+            does_not_raise(),
+        ),
+        # Test for error raising
+    ],
+)
+def test_read_yaml(
+    filepath,
+    contents,
+    expected_output,
+    expected_context,
+):
+    with open(filepath, "w") as file:
+        test = yaml.safe_load(contents)
+        yaml.dump(test, file)
+
+    with expected_context:
+        assert utils.read_yaml(filepath) == expected_output
+
+    os.remove(filepath)
 
 
 @pytest.mark.parametrize(
