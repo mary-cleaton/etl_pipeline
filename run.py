@@ -1,11 +1,14 @@
 """ """
 
-from src import logging_handler
+from src import logging_handler, utils
 
-table_name = "test_dataset"
+configs = utils.read_yaml("input/config.yaml")
+print(configs["TABLE_NAME"])
+print(type(configs["TABLE_NAME"]))
 
 
-def run_pipeline(table_name):
+def run_pipeline(configs):
+    table_name = configs["TABLE_NAME"]
     logger = logging_handler.Logger(table_name).get_logger()
     logger.info(f"Commenced {table_name} processing")
 
@@ -20,4 +23,4 @@ def run_pipeline(table_name):
 
 
 if __name__ == "__main__":
-    run_pipeline(table_name)
+    run_pipeline(configs)

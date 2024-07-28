@@ -1,4 +1,25 @@
 import pandas as pd
+import yaml
+
+
+def read_yaml(filepath: str) -> dict:
+    """
+    Reads a yaml file from the specified filepath.
+
+    Args:
+        filepath (str): The filepath of the yaml file to be read.
+
+    Returns:
+        dict: The contents of the yaml file as a dictionary.
+
+    Raises:
+        yaml.YAMLError: if yaml file cannot be read.
+    """
+    with open(filepath, "r") as file:
+        try:
+            return yaml.safe_load(file)
+        except yaml.YAMLError as error:
+            raise error
 
 
 def set_string_col_to_upper(df: pd.DataFrame, col: str) -> pd.DataFrame:
